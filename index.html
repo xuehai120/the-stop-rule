@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Stop Rule — a defensible approach to authorized security testing</title>
+<meta name="description" content="A free, source-mapped method for scope, refusal, stop-at-proof and a reviewer-ready record. Defensive and educational only.">
+<style>
+  :root{
+    --navy:#0b1f3a; --navy2:#12294a; --ink:#e8eef7; --muted:#9fb3cc;
+    --accent:#5fd0c5; --accent2:#8ab4ff; --line:#23436e; --bg:#07152a;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  a{color:var(--accent2)}
+  .wrap{max-width:920px;margin:0 auto;padding:0 22px}
+  header{padding:34px 0 18px;border-bottom:1px solid var(--line)}
+  .brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:19px;letter-spacing:.2px}
+  .cube{width:26px;height:26px;border:2px solid var(--accent);transform:rotate(45deg);border-radius:5px;flex:none}
+  .tag{color:var(--muted);font-size:13px;margin-top:8px}
+  .hero{padding:52px 0 30px}
+  .hero h1{font-size:clamp(28px,5vw,44px);line-height:1.2;margin:0 0 18px}
+  .hero h1 em{color:var(--accent);font-style:normal}
+  .hero p.lead{font-size:18px;color:var(--muted);max-width:680px;margin:0 0 28px}
+  .btn{display:inline-block;background:var(--accent);color:#05202a;font-weight:700;
+    padding:13px 22px;border-radius:10px;text-decoration:none;margin:0 10px 10px 0}
+  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+  .note{font-size:13px;color:var(--muted);margin-top:16px}
+  section{padding:30px 0;border-top:1px solid var(--line)}
+  h2{font-size:24px;margin:0 0 16px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:8px}
+  .card{background:var(--navy2);border:1px solid var(--line);border-radius:12px;padding:18px}
+  .card h3{margin:0 0 8px;font-size:17px}
+  .card p{margin:0 0 6px;color:var(--muted);font-size:14px}
+  .card a{font-size:14px;font-weight:600}
+  ul.clean{list-style:none;padding:0;margin:0}
+  ul.clean li{padding:10px 0;border-bottom:1px solid var(--line)}
+  ul.clean li:last-child{border-bottom:0}
+  .pill{display:inline-block;font-size:12px;color:var(--accent);border:1px solid var(--line);
+    border-radius:20px;padding:2px 10px;margin-left:8px}
+  footer{padding:28px 0 50px;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
+  code{background:var(--navy2);padding:2px 6px;border-radius:5px;font-size:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="brand"><span class="cube" aria-hidden="true"></span> The Stop Rule</div>
+    <div class="tag">A free, source-mapped method for authorized security testing.</div>
+  </header>
+
+  <div class="hero">
+    <h1>The pentest methodology that knows <em>when to stop.</em></h1>
+    <p class="lead">Most writeups cover finding the issue. This one covers the part that makes the work defensible: a written scope gate, stop-at-proof boundaries, and a record a second person can actually check. Read the whole method free — pay only for the fill-in sheets you use during a test.</p>
+    <a class="btn" href="https://friendly-skiff-f57.notion.site/">Read the free method</a>
+    <a class="btn ghost" href="#writing">Short reads &amp; posts</a>
+    <div class="note">Defensive and educational only. No real targets, no working payloads, no jurisdiction-specific legal text.</div>
+  </div>
+
+  <section>
+    <h2>What the method gives you</h2>
+    <ul class="clean">
+      <li><strong>Scope gate first</strong> — if a target isn't written in scope, it doesn't get tested.</li>
+      <li><strong>Stop at proof</strong> — enough to show an issue is real, not a working exploit.</li>
+      <li><strong>A reviewer-ready record</strong> — facts, guesses and ruled-out items kept apart, so "we were careful" becomes something you can check.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Built on public standards</h2>
+    <p style="color:var(--muted)">Nothing is proprietary magic. Every card points to a reference you can look up yourself.</p>
+    <div class="pill">NIST SP 800-115</div>
+    <div class="pill">OWASP WSTG / ASVS</div>
+    <div class="pill">MITRE CWE / ATT&amp;CK</div>
+    <div class="pill">FIRST CVSS v4.0</div>
+  </section>
+
+  <section id="writing">
+    <h2>Short reads &amp; posts</h2>
+    <p style="color:var(--muted)">The same idea, told in a few different places. Each links back to the free method.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>Long read <span class="pill">Medium</span></h3>
+        <p>The Part of Pentesting Nobody Writes Down: Knowing When to Stop</p>
+        <a href="01-medium.md">Read the draft →</a>
+      </div>
+      <div class="card">
+        <h3>Newsletter <span class="pill">Substack</span></h3>
+        <p>Why we published a testing method that tells you when to stop</p>
+        <a href="02-substack.md">Read the issue →</a>
+      </div>
+      <div class="card">
+        <h3>Discussion <span class="pill">Reddit</span></h3>
+        <p>A free, source-mapped method for keeping an authorized pentest defensible</p>
+        <a href="03-reddit.md">Read the post →</a>
+      </div>
+      <div class="card">
+        <h3>For teams <span class="pill">LinkedIn</span></h3>
+        <p>A defensible test is one a reviewer can rebuild without you in the room.</p>
+        <a href="04-linkedin.md">Read the post →</a>
+      </div>
+      <div class="card">
+        <h3>Short post <span class="pill">X</span></h3>
+        <p>Can you show where you stopped, and why?</p>
+        <a href="05-x.md">Read the post →</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Why this exists</h2>
+    <p style="color:var(--muted)">The method is fully public because the point is to be checkable. The paid layer is only the fill-in paperwork people actually use mid-engagement — never the reading. If you spot an unclear step or a stale version, write to <a href="mailto:3326175627@qq.com?subject=CFT%20feedback">3326175627@qq.com</a>.</p>
+  </section>
+
+  <footer>
+    Defensive and educational use only. &nbsp;·&nbsp; Free authority page: <a href="https://friendly-skiff-f57.notion.site/">friendly-skiff-f57.notion.site</a><br>
+    A static site — no trackers, no scripts, no forms.
+  </footer>
+
+</div>
+</body>
+</html>
