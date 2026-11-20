@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://xuehai120.github.io/the-stop-rule/sitemap.xml
